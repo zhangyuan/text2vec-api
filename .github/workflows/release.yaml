@@ -1,0 +1,27 @@
+name: release
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: zhangyuan/text2vec-api:latest, zhangyuan/text2vec-api:${{github.ref_name}}
+          cache-from: type=registry,ref=zhangyuan/text2vec-api:latest
+          cache-to: type=inline
