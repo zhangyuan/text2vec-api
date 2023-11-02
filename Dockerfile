@@ -7,7 +7,9 @@ COPY requirements.txt requirements-linux-torch.txt /app/
 RUN pip install -r requirements-linux-torch.txt
 RUN pip install -r requirements.txt
 
-# RUN python download_model.py
+
+# COPY config.py build.py /app/
+# RUN python build.py
 
 COPY . /app
 
