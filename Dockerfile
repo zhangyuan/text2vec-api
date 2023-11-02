@@ -2,9 +2,9 @@ FROM python:3.9
 
 WORKDIR /app
 
-COPY requirements.txt requirements-linux-torch /app/
+COPY requirements.txt requirements-linux-torch.txt /app/
 
-RUN pip install -r requirements-linux.txt
+RUN pip install -r requirements.txt -r requirements-linux-torch.txt
 
 # RUN python download_model.py
 
