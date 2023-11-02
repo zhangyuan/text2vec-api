@@ -21,6 +21,8 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
+          build-args: |
+            DOWNLOAD_MODEL=1
           push: true
           tags: zhangyuan/text2vec-api:latest, zhangyuan/text2vec-api:${{github.ref_name}}
           cache-from: type=registry,ref=zhangyuan/text2vec-api:latest

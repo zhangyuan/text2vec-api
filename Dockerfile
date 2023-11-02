@@ -3,6 +3,7 @@ FROM python:3.9
 WORKDIR /app
 
 ARG RUN_AS_USER=app
+ARG DOWNLOAD_MODEL=0
 
 COPY requirements.txt requirements-linux-torch.txt /app/
 
@@ -11,7 +12,7 @@ RUN pip install -r requirements.txt
 
 
 COPY build.py /app/
-RUN python build.py
+RUN [[ "$DOWNLOAD_MODEL" == "1" ]] && python build.py
 
 COPY . /app
 
