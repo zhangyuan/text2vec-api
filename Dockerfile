@@ -2,7 +2,7 @@ FROM python:3.9
 
 WORKDIR /app
 
-COPY requirements.txt requirements-linux.txt /app/
+COPY requirements.txt requirements-linux-torch /app/
 
 RUN pip install -r requirements-linux.txt
 
