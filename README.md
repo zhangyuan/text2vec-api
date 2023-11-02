@@ -27,7 +27,7 @@ Visit <http://127.0.0.1:8000/embeddings?input=hello> to get the embeddings.
 ### Post request
 
 
-The server also support `POST` request to `/embeddings` with request body like
+The server also supports `POST` request to `/embeddings` with request body like
 
 ```json
 {
