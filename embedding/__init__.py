@@ -5,6 +5,7 @@ class Encoder:
     self.model: SentenceModel = None
 
   def init(self, model_name_or_path: str) -> None:
+    # model is saved into ~/.cache/huggingface/hub/
     self.model = SentenceModel(model_name_or_path)
 
   def encode(self, sentences):
