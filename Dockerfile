@@ -8,7 +8,7 @@ RUN pip install -r requirements-linux-torch.txt
 RUN pip install -r requirements.txt
 
 
-COPY config.py build.py /app/
+COPY build.py /app/
 RUN python build.py
 
 COPY . /app
