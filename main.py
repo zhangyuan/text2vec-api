@@ -2,12 +2,12 @@ import asyncio
 from fastapi import FastAPI
 from pydantic import BaseModel
 from embedding import Encoder
-import config
+import build
 
 app = FastAPI()
 
 encoder = Encoder()
-encoder.init(config.EMBEDDING_MODEL_NAME)
+encoder.init(build.EMBEDDING_MODEL_NAME)
 
 # Not sure if text2vec.SentenceModel is thread safe, so add a mutex here
 encoder_mutex = asyncio.Lock()

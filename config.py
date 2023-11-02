@@ -1,3 +1,0 @@
-import config
-
-EMBEDDING_MODEL_NAME=config.EMBEDDING_MODEL_NAME
