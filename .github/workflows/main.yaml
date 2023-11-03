@@ -7,4 +7,12 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v4
-      - run: docker build .
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false
+          tags: zhangyuan/text2vec-api:latest, zhangyuan/text2vec-api:${{github.ref_name}}
+          cache-from: type=registry,ref=zhangyuan/text2vec-api:latest
+          cache-to: type=inline
