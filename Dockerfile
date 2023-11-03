@@ -23,4 +23,4 @@ RUN if [ "$DOWNLOAD_MODEL" -eq "1" ]; then python build.py; fi
 COPY . /app
 USER ${RUN_AS_USER}
 
-CMD ["bash", "-c", "uvicorn main:app --reload -h 0.0.0.0" ]
+CMD ["bash", "-c", "uvicorn main:app --host 0.0.0.0" ]
