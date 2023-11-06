@@ -7,3 +7,4 @@ services:
       - /huggingface:/huggingface
     ports:
       - 9008:8000
+    restart: unless-stopped
