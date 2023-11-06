@@ -17,7 +17,8 @@ Install the depedencies:
 ```bash
 pip install -r requirements-mac.txt
 # or
-# pip install -r requirements-linux.txt
+
+# pip install -r requirements.txt && pip install -r requirements-linux-torch
 ```
 
 Launch the server:

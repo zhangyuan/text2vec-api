@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  text2vec-api:
+    build: .
+    volumes:
+      - /huggingface:/huggingface
+    ports:
+      - 9008:8000
