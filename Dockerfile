@@ -10,7 +10,7 @@ COPY requirements.txt requirements-linux-torch.txt /app/
 RUN pip install -r requirements-linux-torch.txt
 RUN pip install -r requirements.txt
 
-RUN adduser --disabled-password --gecos "" ${RUN_AS_USER}
+RUN useradd -m -s /bin/bash -p '' ${RUN_AS_USER}
 
 RUN mkdir -p /huggingface/hub && chown ${RUN_AS_USER}:${RUN_AS_USER} /huggingface/hub
 ENV TRANSFORMERS_CACHE=/huggingface/hub
