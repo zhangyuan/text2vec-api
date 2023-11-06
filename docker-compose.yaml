@@ -4,7 +4,7 @@ services:
   text2vec-api:
     build: .
     volumes:
-      - /huggingface:/huggingface
+      - ./huggingface:/huggingface
     ports:
       - 9008:8000
     restart: unless-stopped
